@@ -1,31 +1,100 @@
-function contar(){
-    let ini = document.getElementById('inicio')
-    let fim = document.getElementById('fim')
-    let passo = document.getElementById('passo')
-    let res = document.getElementById('res')
 
-    if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0 ){
-        alert('[ERRO] Faltam dados!')
-    } else {
-        res.innerHTML = 'Contando: <br>'
-        let i = Number(ini.value)
-        let f = Number(fim.value)
-        let p = Number(passo.value)
 
-        if (p <= 0){
-            alert('Passo invalido! Considerando PASSO 1')
-            p = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function gerar(){
+    let num = document.getElementById('num')
+    let tab = document.getElementById('seltab')
+    if(num.value.length == 0 ){
+        window.alert('Por favor, digite um número')
+    } else{
+        let n = Number(num.value)
+        let c = 1
+        tab.innerHTML = ''
+        while (c <= 10){
+            let item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c}`
+            tab.appendChild(item)
+            c++
         }
-
-        if(i < f){ //Contagem progressiva
-            for(let c = i; c <= f; c += p){
-                res.innerHTML += `${c}\u{1F449} `
-            }
-        } else { //Contagem regressiva
-            for(let c = i; c >= f; c-=p ) {
-                res.innerHTML += `${c}\u{1F449}`
-            }
-        }       
-        res.innerHTML += `\u{1F3C1}`
+        
     }
+
 }
